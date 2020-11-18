@@ -1,6 +1,7 @@
 
 from flask import Flask, request, jsonify
 app = Flask(__name__)
+import os
 port = int(os.environ.get("PORT", 5000))
 import pickle
 import numpy as np
