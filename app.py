@@ -1,7 +1,7 @@
 
 from flask import Flask, request, jsonify
 app = Flask(__name__)
-
+port = int(os.environ.get("PORT", 5000))
 import pickle
 import numpy as np
 import pandas as pd
@@ -31,4 +31,5 @@ def page_not_found(error):
     
 if __name__ == '__main__':
     # Threaded option to enable multiple instances for multiple user access support
-    app.run(debug = True,threaded=True, port=5000)
+  
+    app.run(debug=True, threaded=True, host='0.0.0.0', port=port)
